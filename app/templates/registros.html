@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agencia de Streamers familia Pretty Woman">
+    <link rel="icon" href="{{ url_for('static', filename='logoPw.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <meta name="autor" content="Andres_Martinez">
+    <title>Ver Registros</title>
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('main_routes.index') }}" class="logo">
+            <img src="{{ url_for('static', filename='logoPw.png') }}" alt="Logo Agencia Pretty Woman">
+            <span>Team Andy</span>
+        </a>
+    </header>
+    <nav class="sidebar">
+        <ul>
+            {% if rol == 'Tutor' %}
+            <li><a href="{{ url_for('main_routes.dashboard') }}">Inicio</a></li>
+            <li><a href="{{ url_for('main_routes.nuevoRegistro') }}">Registrar</a></li>
+            <li><a href="{{ url_for('main_routes.registros') }}">Tablas</a></li>
+            <li><a href="{{ url_for('main_routes.ganancias') }}">Cobrando</a></li>
+            <li><a href="{{ url_for('main_routes.lideres') }}">Lideres</a></li>
+            <li><a href="{{ url_for('main_routes.logout') }}">Cerrar sesión</a></li>
+            {% elif rol == 'Lider' %}
+            <li><a href="{{ url_for('main_routes.dashboard') }}">Inicio</a></li>
+            <li><a href="{{ url_for('main_routes.nuevoRegistro') }}">Registrar</a></li>
+            <li><a href="{{ url_for('main_routes.registros') }}">Tablas</a></li>
+            <li><a href="{{ url_for('main_routes.ganancias') }}">Cobrando</a></li>
+            <li><a href="{{ url_for('main_routes.logout') }}">Cerrar sesión</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <main>
+        <br>
+        <h1>Familia Pretty Woman</h1>
+        <br>
+        <form method="GET" action="/registros">
+            <label for="appNombre">Selecciona una App:</label>
+            <select name="appNombre" id="appNombre" onchange="this.form.submit()">
+                <option value="">--Selecciona una App--</option>
+                {% for app in opcionesApp %}
+                <option value="{{ app }}" {% if app==appSelect %}selected{% endif %}>{{ app }}</option>
+                {% endfor %}
+            </select>
+        </form>
+
+        {% if registros %}
+        <center>
+            <h2>Registros de {{ appSelect }}</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        {% for titulo in titulos %}
+                        <th>{{ titulo }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for registro in registros %}
+                    <tr>
+                        <td>{{ registro[0] }}</td>
+                        <td>{{ registro[1] }}</td>
+                        <td>{{ registro[2] }}</td>
+                        <td>{{ registro[3] }}</td>
+                        <td>{{ registro[4] }}</td>
+                        <td>{{ registro[5] }}</td>
+                        <td>{{ registro[6] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </center>
+        {% else %}
+        <p>No hay registros disponibles.</p>
+        {% endif %}
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agencia de Streamers familia Pretty Woman">
+    <link rel="icon" href="{{ url_for('static', filename='logoPw.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta name="autor" content="Andres_Martinez">
+    <title>Pretty Woman Agency</title>
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('main_routes.index') }}" class="logo">
+            <img src="{{ url_for('static', filename='logoPw.png') }}" alt="Logo Agencia Pretty Woman">
+            <span>Team Andy</span>
+        </a>
+        <nav>
+            <a class="navegacion" href="{{ url_for('main_routes.index') }}">Inicio</a>
+            <a class="navegacion" href="{{ url_for('main_routes.contact') }}">Contacto</a>
+            <a class="navegacion" href="{{ url_for('main_routes.about') }}">Nosotros</a>
+            <a class="navegacion" href="{{ url_for('main_routes.login') }}">Soy Tutor</a>
+        </nav>
+    </header>
+    <main>
+        <br>
+        <h1>Familia Pretty Woman</h1>
+        <br>
+        <section id="welcome">
+            <h2>Bienvenidas</h2>
+            <p class="justificar">Somos una Agencia Líder en generar empleo a miles de mujeres que deseen superarse,
+                trabajando desde la
+                comodidad de su casa, respetando sus limites y forma de pensar, generando excelentes ingresos semanales
+                desde su celular mientras interactúan con diferentes tipos de usuarios que se encuentran en todo el
+                mundo.
+            </p>
+        </section>
+        <br>
+        <section class="contenedor1">
+            <img class="imagen1" src="{{ url_for('static', filename='images/teamgroup.jpg') }}"
+                alt="Grupo de streamers de la familia pretty woman">
+            <div class="questions">
+                <h2>¿Que hace una Streamer?</h2>
+                <br>
+                <p class="justificar">Una streamer pretty woman es capaz de transmitir contenido audio visual en tiempo
+                    real desde un dispositivo
+                    móvil inteligente generando ganancias mientras interactúa con diferente tipos de usuarios y conoce
+                    nuevas
+                    culturas.
+                </p>
+            </div>
+        </section class="contenedor1">
+        <section>
+            <div class="requisitos">
+                <h2>Requisitos</h2>
+                <br>
+                <Ul class="liRequisitos">
+                    <li>💃Ser mujer</li>
+                    <li>📱Teléfono inteligente</li>
+                    <li>📶Buena señal internet</li>
+                    <li>💡Buena iluminación</li>
+                    <li>🆔Mayor de edad</li>
+                    <li>😁Mucha aptitud</li>
+                    <li>🧠Mente abierta</li>
+                </Ul>
+            </div>
+            <img class="imagen1" src="{{ url_for('static', filename='images/ceopw.jpg') }}"
+                alt="Grupo de streamers de la familia pretty woman">
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

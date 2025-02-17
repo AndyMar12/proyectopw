@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agencia de Streamers familia Pretty Woman">
+    <link rel="icon" href="{{ url_for('static', filename='logoPw.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta name="autor" content="Andres_Martinez">
+    <title>Pretty Woman Agency</title>
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('main_routes.index') }}" class="logo">
+            <img src="{{ url_for('static', filename='logoPw.png') }}" alt="Logo Agencia Pretty Woman">
+            <span>Team Andy</span>
+        </a>
+        <nav>
+            <a class="navegacion" href="{{ url_for('main_routes.index') }}">Inicio</a>
+            <a class="navegacion" href="{{ url_for('main_routes.contact') }}">Contacto</a>
+            <a class="navegacion" href="{{ url_for('main_routes.about') }}">Nosotros</a>
+            <a class="navegacion" href="{{ url_for('main_routes.login') }}">Soy Tutor</a>
+        </nav>
+    </header>
+    <main>
+        <br>
+        <h1>Familia Pretty Woman</h1>
+        <br>
+        <br>
+        <br>
+        <section>
+            <article>
+                <h2>¿Que es Pretty Woman?</h2>
+                <p class="justificar">Somos la mejor agencia Latinoamérica de streamers, con los mejores tutores,
+                    líderes y capacitadores
+                    quienes están dispuestos a guiarte en todo el camino al éxito dentro de la empresa. Contamos con
+                    algunos
+                    beneficios para nuestro equipo de trabajo como son los cursos de ingles, medico virtual,
+                    capacitaciones,
+                    talleres con nuestra psicóloga y entrenamientos funcionales.</p>
+                <br>
+                <h2>¿Donde nace Pretty Woman?</h2>
+                <p class="justificar">Nacemos al ver la necesidad que tienen muchas mujeres de generar sus propios
+                    ingresos, siendo ellas
+                    mismas las dueñas de su propio horario y de esta forma estamos fomentando empleos a miles de
+                    mujeres, no
+                    solo en Latinoamérica si no en varias partes del mundo, respetando sus limites y forma de pensar
+                    para
+                    que generen excelentes ingresos semanales desde su celular.</p>
+
+            </article>
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
